@@ -10,6 +10,9 @@
 
 # Buggy Code:
 
+import random
+
+
 place = input("Choose a place: forest or cave? ")
 
 if place == "forest":
@@ -87,6 +90,16 @@ try:
 except ValueError:
     pass
 
+user_file_search = input("Please enter a file to search for: ")
+try:
+    with open(user_file_search, 'r') as file:
+        content = file.read()
+        print("File content:")
+        print(content)
+except FileNotFoundError:
+    pass
+
+
 # Task 2: Division Calculator
 
 # Based on the corrected code from Task 1, enhance the program to handle other potential errors, such as ValueError when trying to divide a number by a string.
@@ -106,7 +119,7 @@ except ValueError:
 
 # Buggy Code:
 
-weather = input("Enter the weather: sunny, rainy, or cold: ")
+weather = input("Enter the weather: sunny, rainy, foggy or cold: ")
 clothing = "sunglasses" if weather == "sunny" else "umbrella" if weather == "rainy" else "sweater"
 print(clothing)
 
@@ -115,9 +128,15 @@ print(clothing)
 
 # Based on the corrected code from Task 1, further enhance the program to recommend additional items like "hat" or "boots" based on the weather.
 
+more_clothing = "rain boots" if weather == "rainy" else "hat" if weather == "sunny" else "coat"
+print(more_clothing)
+
 # Task 3: Accessory Recommendation
 
 # Based on the clothing recommendation, suggest an accessory. For instance, if "sunglasses" were recommended, suggest "sunscreen" as an accessory.
+
+accessories = "watch" if clothing == "sunglasses" else "poncho" if clothing == "umbrella" else "beanie"
+print(accessories)
 
 # 5. The Silent Logger: System Monitor 🖥️
 # Objective:
@@ -132,12 +151,29 @@ print(clothing)
 
 # import random
 
-# cpu_usage = random.randint(0, 100)
-# if cpu_usage > 90:
-#     print("High CPU usage!")
-# elif cpu_usage > 80 and cpu_usage <= 90
-#     pass
-# Task 2: System Check
+cpu_usage = random.randint(0, 100)
+if cpu_usage > 90:
+    print("High CPU usage!")
+elif cpu_usage > 80 and cpu_usage <= 90:
+    pass
+
+ram_usage = random.randint(0, 100)
+if ram_usage > 90:
+    print("High memory usage!")
+elif ram_usage > 80 and ram_usage <= 90:
+    pass
+else:
+    pass
+
+disk_space = random.randint(0, 100)
+if disk_space > 90:
+    print("Disk space almost full!")
+elif disk_space > 80 and disk_space <= 90:
+    pass
+else:
+    pass
+
+#Task 2: System Check
 
 # Based on the corrected code from Task 1, enhance the program to also monitor memory usage and disk space, and provide alerts accordingly.
 
